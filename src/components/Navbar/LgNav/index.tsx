@@ -1,3 +1,4 @@
+import useNavTab from '@store/navbar'
 import React from 'react'
 
 import Games from './components/games'

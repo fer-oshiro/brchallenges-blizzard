@@ -26,30 +26,28 @@ export default function Sports() {
           {tab === 'sport' && <IoIosArrowUp className="ml-4 text-sky-600" />}
           {tab !== 'sport' && <IoIosArrowDown className="right-0 ml-4" />}
         </summary>
-        <div className="fixed bottom mt-6 right-0 left-0 bg-gray-900 backdrop-contrast-90">
+        <div className="fixed bottom mt-6 right-0 left-0 bg-main backdrop-blur-sm">
           <ul className="container mx-auto grid grid-cols-5 gap-16 justify-items-center p-8 py-16">
             {sports.map((sport) => (
               <li key={sport.name} className="w-full">
                 <a
-                  className="flex items-center text-xs self-center flex-col hover:bg-slate-900 text-slate-300	hover:text-white text-center duration-300"
+                  className="relative flex items-center text-xs self-center flex-col hover:bg-black text-slate-300	hover:text-white p-12 rounded-sm duration-300"
                   href="#"
                 >
-                  <Image
-                    className="w-full"
-                    src={sport.img}
-                    width="150"
-                    height="150"
-                    alt=""
-                  />
-                  {sport.name}
+                  <div className='absolute w-full h-full hover:scale-125 duration-300 '>
+                    <Image src={sport.img} className='m-auto' width="150" height="150" alt="" />
+                  </div>
+                  <span className='pt-36 text-center'>
+                    {sport.name}
+                  </span>
                 </a>
               </li>
             ))}
           </ul>
-          <ul className="flex justify-center w-screen space-x-12 bg-slate-800 p-4">
+          <ul className="flex justify-center w-screen space-x-12 bg-bottom p-4">
             <li className="max-w-fit">
               <a
-                className="flex px-4 py-2 items-center text-xs self-center hover:bg-slate-900 text-slate-300 hover:text-white duration-300 rounded-md"
+                className="flex px-4 py-2 items-center text-xs self-center hover:bg-neutral-900 text-slate-300 hover:text-white duration-300 rounded-md"
                 href="#"
               >
                 <Image
