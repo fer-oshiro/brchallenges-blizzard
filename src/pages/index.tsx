@@ -5,18 +5,25 @@ import { BiUser } from 'react-icons/bi'
 import LgNav from '@components/Navbar/LgNav'
 import SmNav from '@components/Navbar/SmNav'
 import useNavTab from '@store/navbar'
+import useCarouselTab from '@store/carousel'
+import Carousel from '@components/Carousel/Tab'
+import { banner } from '@constants/banner'
+import hover from '@assets/banner/utils/hover.png'
+import noHover from '@assets/banner/utils/no-hover.png'
 
 export default function Home() {
   const { tab } = useNavTab((state) => state)
-  const bg = tab ? 'bg-main backdrop-blur-sm' : ''
+  const { bg, index } = useCarouselTab((state) => state)
+
+  const menuBg = tab ? 'bg-main backdrop-blur-sm' : ''
 
   return (
     <>
-      <div className="bg-[url('/banner-hero/games/diablo-bg.png')] bg-cover bg-no-repeat  ">
-        <header className='min-h-screen text-white'>
-          <div className={bg}>
-            <div className=' lg:container lg:mx-auto'>
-              <nav className="flex items-center justify-between mx-4 py-6">
+      <div className="bg-cover bg-no-repeat bg-top duration-500 relative z-10" style={{ backgroundImage: `url(${bg})` }}>
+        <header className='h-screen text-white flex flex-col'>
+          <div className={menuBg}>
+            <div className='lg:container lg:mx-auto'>
+              <nav className="flex items-center justify-between mx-8 py-6">
                 <Link href="/" className="cursor-pointer">
                   <Image
                     src="/logo-blizzard.png"
@@ -31,7 +38,7 @@ export default function Home() {
                 <div className="flex space-x-4 ml-auto mr-16 lg:mr-0">
                   <Link
                     href="/#"
-                    className="min-w-max hidden md:block border border-white border-solid rounded-sm	px-4 py-2 text-xs	hover:bg-white hover:text-slate-900	duration-1000	"
+                    className="min-w-max self-center hidden md:block border border-white border-solid rounded-sm	px-4 py-3 text-xs	hover:bg-white hover:text-slate-900	duration-1000"
                   >
                     Criar conta
                   </Link>
@@ -39,33 +46,47 @@ export default function Home() {
                     onClick={() => console.log('login')}
                     className="hidden md:flex items-center rounded-sm px-4 py-2 bg-sky-500 hover:bg-sky-400 text-xs	duration-700"
                   >
-                    <BiUser className="mr-2" />
+                    <BiUser className="mr-2 text-xl" />
                     Logar
                   </button>
                 </div>
                 <SmNav />
               </nav>
-              <hr className="relative w-12 border-sky-500 mx-4 z-1" />
-              <hr className="absolute left-0 right-0  border-slate-700" />
-
+              <hr className="relative w-12 border-sky-500 mx-8 z-1 border-t-4" />
+              <hr className="absolute left-0 right-0  border-light_line border-t-4 -mt-1" />
             </div>
           </div>
-          <div className="">
-            <div className='mt-100'>
-              <h1 className="text-4xl lg:text-6xl font-bold mt-12 lg:mt-24">
-                Jogue os jogos mais populares da Blizzard
+          <div className='lg:container lg:mx-auto grow grid grid-cols-1 md:grid-cols-3 grid-flow-row auto-rows-auto lg:grid-cols-6 gap-x-16 px-8'>
+            <div className='col-start-1 row-start-1 lg:col-start-2 col-span-3 row-span-1 lg:row-span-2 self-end lg:self-center lg:pb-32'>
+              <h1 className="text-4xl lg:text-6xl font-bold lg:mt-24 w-title">
+                {banner[index]?.title || ''}
               </h1>
-              <p className="text-lg lg:text-2xl mt-4 lg:mt-8">
-                Jogue os jogos mais populares da Blizzard, incluindo World of Warcraft,
-                Overwatch, Hearthstone, StarCraft II e muito mais.
+              <p className="mb-16 text-lg lg:text-2xl mt-4 lg:mt-8">
+                {banner[index]?.subtitle || ''}
               </p>
-              <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 mt-8 lg:mt-16">
-                <Link
-                  href="/#"
-                  className="min-w-max border border-white border-solid rounded-sm	px-4 py-2 text-xs	hover:bg-white hover:text-slate-900	duration-1000	"
-                >
-                  Criar conta
-                </Link>
+              <Link
+                href="/#"
+                className="max-w-fit rounded-sm px-6 py-4 bg-sky-500 hover:bg-sky-400 text-sm	duration-700 flex items-center"
+              >
+                <BiUser className="mr-2 text-xl" />
+                {banner[index]?.button || ''}
+              </Link>
+            </div>
+            <div className='pt-8 row-start-2 col-start-1 col-span-2 lg:col-span-1 lg:row-start-1 lg:row-span-2 self-center lg:pl-8'>
+              <Carousel />
+            </div>
+            <Image src={banner[index]?.logo || ''} className='duration-500 self-center justify-self-end col-start-2  row-start-1 lg:col-start-5 col-span-2 hidden md:block lg:pb-0' alt='' />
+            <div className='row-start-2 col-start-3 lg:col-start-5 lg:col-span-2 hidden md:block justify-self-end  w-60 lg:w-80 pt-24 lg:pt-6'>
+              <p className='text-end pb-6'>ASSISTA O TRAILER</p>
+              <div className='relative'>
+                <div className='absolute w-60 lg:w-80 aspect-video bg-cover'>
+                  <Image src={hover.src} alt='' width='80' height='80' className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' />
+                  <Image unoptimized src={banner[index]?.animation || ''} alt='' className='w-60 lg:w-80 aspect-video bg-cover' />
+                </div>
+                <div className='absolute hover:opacity-0 w-60 lg:w-80 aspect-video'>
+                  <Image src={noHover.src} alt='' width='80' height='80' className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' />
+                  <Image src={banner[index]?.cover || ''} alt='' className='w-60 lg:w-80 aspect-video' />
+                </div>
               </div>
             </div>
           </div>

@@ -20,6 +20,10 @@ module.exports = {
         main: 'rgba(2, 2, 3, .9)',
         bottom: '#15171B',
         black: '#000000',
+        light_line: 'rgba(255,255,255,0.1)',
+      },
+      width: {
+        title: '15ch',
       },
     },
   },
