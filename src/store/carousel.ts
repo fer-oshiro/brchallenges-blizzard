@@ -15,6 +15,8 @@ const useCarouselGame = create<CarouselGame>((set) => ({
   bg: banner[0].img?.src,
   toggle: (game: string) =>
     set((state) => {
+      const notInclude = ['StarCraft® II', 'Diablo® Immortal']
+      if (notInclude.includes(game)) return state
       if (state.game === game) return state
       return {
         game,
