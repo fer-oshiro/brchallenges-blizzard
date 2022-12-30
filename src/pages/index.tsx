@@ -18,12 +18,17 @@ import gameList from '@assets/battlenet/games.svg'
 import connect from '@assets/battlenet/connect.svg'
 import buy from '@assets/battlenet/buy.svg'
 import mobile from '@assets/battlenet/mobile.svg'
+import Login from '@components/Modal/login'
+import { useState } from 'react'
+import useLoginModal from '@store/login'
 
 export default function Home() {
   const { tab } = useNavTab((state) => state)
   const { bg, index } = useCarouselTab((state) => state)
-
+  const { toggle } = useLoginModal((state) => state)
   const menuBg = tab ? 'bg-main backdrop-blur-sm' : ''
+
+
 
   return (
     <>
@@ -51,7 +56,7 @@ export default function Home() {
                     Criar conta
                   </Link>
                   <button
-                    onClick={() => console.log('login')}
+                    onClick={() => toggle(true)}
                     className="hidden md:flex items-center rounded-sm px-4 py-2 bg-sky-500 hover:bg-sky-400 text-xs	duration-700"
                   >
                     <BiUser className="mr-2 text-xl" />
@@ -155,6 +160,7 @@ export default function Home() {
           Desenvolvido por <b>Fernanda Oshiro</b>
         </p>
       </footer>
+      {<Login />}
     </>
   )
 }
