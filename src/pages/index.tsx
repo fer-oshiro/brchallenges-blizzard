@@ -10,6 +10,14 @@ import Carousel from '@components/Carousel/Tab'
 import { banner } from '@constants/banner'
 import hover from '@assets/banner/utils/hover.png'
 import noHover from '@assets/banner/utils/no-hover.png'
+import consoles from '@assets/consoles.png'
+import games from '@assets/icons/icon-all.svg'
+import List from '@components/Games/list'
+
+import gameList from '@assets/battlenet/games.svg'
+import connect from '@assets/battlenet/connect.svg'
+import buy from '@assets/battlenet/buy.svg'
+import mobile from '@assets/battlenet/mobile.svg'
 
 export default function Home() {
   const { tab } = useNavTab((state) => state)
@@ -58,7 +66,7 @@ export default function Home() {
           </div>
           <div className='lg:container lg:mx-auto grow grid grid-cols-1 md:grid-cols-3 grid-flow-row auto-rows-auto lg:grid-cols-6 gap-x-16 px-8'>
             <div className='col-start-1 row-start-1 lg:col-start-2 col-span-3 row-span-1 lg:row-span-2 self-end lg:self-center lg:pb-32'>
-              <h1 className="text-4xl lg:text-6xl font-bold lg:mt-24 w-title">
+              <h1 className="text-4xl lg:text-6xl font-bold lg:mt-24 w-title max-w-fit">
                 {banner[index]?.title || ''}
               </h1>
               <p className="mb-16 text-lg lg:text-2xl mt-4 lg:mt-8">
@@ -92,9 +100,61 @@ export default function Home() {
           </div>
         </header>
       </div >
-      <section>
-        asdasdasd
+      <section className='lg:container lg:mx-auto py-48 px-8'>
+        <div className='flex justify-between'>
+          <p className='text-xl text-zinc-400 font-semibold hidden lg:block'>GAMES</p>
+          <p className='text-xl lg:text-5xl text-white font-bold max-w-min'>Jogos exclusivos</p>
+          <Image src={consoles} width='160' height='22' alt='Disponiveis para pc, nintendo switch, xbox e playstation' className='self-end hidden md:block' />
+          <a className='flex self-end text-sky-400 hover:text-sky-300 cursor-pointer space-x-2'>
+            <Image src={games.src} width='20' height='20' alt='' />
+            <p>Ver todos os jogos</p>
+          </a>
+        </div>
+        <List />
       </section>
+      <section className='bg-cover' style={{ backgroundImage: 'url(/footer-background.png)' }}>
+        <div className='lg:container lg:mx-auto py-36 flex sm:flex-row flex-col'>
+          <div className='min-w-fit mt-auto pl-8'>
+            <Image src='/logo-battle-net.png' width={200} height={25} alt='' />
+            <h2 className='text-white md:text-2xl text-lg font-bold my-8'>Baixe agora o battle.net</h2>
+            <ul className='text-slate-400 [&>li]:flex [&>li]:gap-4 [&>li]:mb-6  md:[&>li>img]:max-w-[20px] [&>li>img]:max-w-[15px] md:text-base text-xs'>
+              <li>
+                <Image src={gameList} width={20} height={20} alt='' />
+                Seus jogos em um só lugar
+              </li>
+              <li>
+                <Image src={connect} width={20} height={20} alt='' />
+                Conecte-se aos seus amigos
+              </li>
+              <li>
+                <Image src={buy} width={20} height={20} alt='' />
+                Compre jogos e itens digitais
+              </li>
+            </ul>
+            <button className='text-white bg-sky-500 hover:bg-sky-400 duration-300 flex py-3 px-10 rounded-md gap-4 md:text-base text-xs items-center font-semibold mt-12'>
+              <Image src={mobile} width={20} height={20} alt='' />
+              Baixe para o PC
+            </button>
+            <div className='py-16 text-white flex gap-6 md:text-base text-xs'>
+              <Image src={mobile} width={20} height={20} alt='' />
+              <p>
+                Também disponível como <a className='underline block cursor-pointer'>aplicativo móvel</a>
+              </p>
+            </div>
+          </div>
+          <div className='relative w-full overflow-hidden'>
+            <div className='sm:w-[800px] sm:h-[550px] w-[300px] h-[300px] mx-auto'>
+              <Image src='/ilustrations/app.png' width={800} height={800} alt='' className='absolute bottom-0 sm:min-w-[800px] min-w-[100px]  max-w-[500px] object-left' />
+              <Image src='/ilustrations/app-mini.png' width={400} height={400} alt='' className='absolute bottom-0 sm:ml-[200px] sm:min-w-[400px] max-w-[250px] ml-[100px]' />
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer className='py-8 w-full'>
+        <p className='text-white text-center'>
+          Desenvolvido por <b>Fernanda Oshiro</b>
+        </p>
+      </footer>
     </>
   )
 }

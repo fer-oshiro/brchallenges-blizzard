@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang="pt-BR" className="bg-slate-900">
+    <Html lang="pt-BR" style={{ backgroundColor: '#020203' }}>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
