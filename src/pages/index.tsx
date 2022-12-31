@@ -20,13 +20,9 @@ import buy from '@assets/battlenet/buy.svg'
 import mobile from '@assets/battlenet/mobile.svg'
 import Login from '@components/Modal/login'
 import useLoginModal from '@store/login'
-
-import windows from '@assets/so/windows.png'
-import linux from '@assets/so/linux.png'
-import mac from '@assets/so/mac.svg'
 import BattleNetButton from '@components/BattleNet/button'
 
-function Home({ os }: { os: string }) {
+function Home() {
   const { tab } = useNavTab((state) => state)
   const { bg, index } = useCarouselTab((state) => state)
   const { toggle } = useLoginModal((state) => state)
