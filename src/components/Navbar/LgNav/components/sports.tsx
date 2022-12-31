@@ -31,7 +31,7 @@ export default function Sports() {
             {sports.map((sport) => (
               <li key={sport.name} className="w-full">
                 <a
-                  className="relative flex items-center text-xs self-center flex-col hover:bg-black text-slate-300	hover:text-white p-12 rounded-sm duration-300"
+                  className="relative flex items-center text-xs self-center flex-col hover:bg-black text-slate-300	hover:text-white p-12 rounded-sm duration-300 h-full"
                   href="#"
                 >
                   <div className='absolute w-full h-full hover:scale-125 duration-300 '>
