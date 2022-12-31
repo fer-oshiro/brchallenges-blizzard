@@ -33,7 +33,7 @@ export default function List() {
             </div>
             <div className="absolute pt-4 sm:block hidden">
               <p className="text-slate-50 font-semibold pt-4 md:text-lg text-sm">{game.name}</p>
-              <p className="text-slate-300 md:text-base text-xs">{game.category}</p>
+              <p className="text-slate-400 text-[.6rem] md:text-xs pt-1">{game.category}</p>
             </div>
           </div>
         </div>
