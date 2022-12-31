@@ -26,7 +26,7 @@ function Home() {
   const { tab } = useNavTab((state) => state)
   const { bg, index } = useCarouselTab((state) => state)
   const { toggle } = useLoginModal((state) => state)
-  const menuBg = tab ? 'bg-main backdrop-blur-sm' : ''
+  const menuBg = tab ? 'lg:bg-main lg:backdrop-blur-sm' : ''
 
   return (
     <>
