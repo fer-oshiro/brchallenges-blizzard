@@ -24,7 +24,7 @@ export default function List() {
           <div className="relative">
             <div className="relative">
               <div className="w-full h-full overflow-hidden">
-                <div className="w-full hover:[&:first-child]:scale-125 hover:[&>*:nth-child(2)]:from-slate-900 duration-300">
+                <div className="w-full hover:[&:first-child]:scale-125 hover:[&>*:nth-child(2)]:from-gray-900 duration-300">
                   <Image src={game.image} width={300} height={300} alt='' className="w-full" />
                   <div className="absolute z-10  bg-gradient-to-t  from-inherit  w-full h-full top-0  duration-300" />
                 </div>
