@@ -48,7 +48,7 @@ export default function Login() {
                 <div className=' bg-gradient-to-tl from-black'>
                   <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div className='mr-auto'>
-                      <AiOutlineClose size={36} className='cursor-pointer text-sky-500 ml-auto text-4xl' onClick={() => toggle(false)} />
+                      <AiOutlineClose size={36} className='cursor-pointer text-sky-500 hover:text-sky-300 ml-auto text-4xl' onClick={() => toggle(false)} />
                     </div>
                     <div className="mt-3 text-center sm:mt-0 sm:text-left">
                       <Dialog.Title as="div" >
