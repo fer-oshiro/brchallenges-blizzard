@@ -66,7 +66,7 @@ function Home() {
               <hr className="absolute left-0 right-0  border-light_line border-t-4 -mt-1" />
             </div>
           </div>
-          <div className='lg:container lg:mx-auto grow grid grid-cols-1 md:grid-cols-3 grid-flow-row auto-rows-auto lg:grid-cols-6 gap-x-16 px-8'>
+          <div className='lg:container lg:mx-auto grid grid-cols-1 md:grid-cols-3 grid-flow-row auto-rows-min  gap-y-16 px-8 my-auto md:pt-20 lg:pt-0'>
             <div className='col-start-1 row-start-1 lg:col-start-2 col-span-3 row-span-1 lg:row-span-2 self-end lg:self-center lg:pb-32'>
               <h1 className="text-4xl lg:text-6xl font-bold lg:mt-24 w-title max-w-fit">
                 {banner[index]?.title || ''}
@@ -82,11 +82,11 @@ function Home() {
                 {banner[index]?.button || ''}
               </Link>
             </div>
-            <div className='pt-8 row-start-2 col-start-1 col-span-2 lg:col-span-1 lg:row-start-1 lg:row-span-2 self-center lg:pl-8'>
+            <div className='pt-8 lg:my-auto mt-auto row-start-2 col-start-1 col-span-2 lg:col-span-1 lg:row-start-1 lg:row-span-2 self-center lg:pl-8'>
               <Carousel />
             </div>
-            <Image src={banner[index]?.logo || ''} priority className='duration-500 self-center justify-self-end col-start-2  row-start-1 lg:col-start-5 col-span-2 hidden md:block lg:pb-0' alt='' />
-            <div className='row-start-2 col-start-3 lg:col-start-5 lg:col-span-2 hidden md:block justify-self-end  w-60 lg:w-80 pt-24 lg:pt-6'>
+            <Image src={banner[index]?.logo || ''} priority className='duration-500 self-center justify-self-end col-start-2 row-start-1 lg:col-start-5 col-span-2 hidden md:block lg:pb-0 -translate-y-full lg:-translate-y-0 -z-10' alt='' />
+            <div className='row-start-2 col-start-3 lg:col-start-5 lg:col-span-2 hidden md:block justify-self-end  w-60 lg:w-80 min-h-[185px] lg:min-h-[250px] mt-auto'>
               <p className='text-end pb-6'>ASSISTA O TRAILER</p>
               <div className='relative'>
                 <div className='absolute w-60 lg:w-80 aspect-video bg-cover'>
