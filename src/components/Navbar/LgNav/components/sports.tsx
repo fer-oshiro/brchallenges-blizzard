@@ -44,7 +44,7 @@ export default function Sports() {
               </li>
             ))}
           </ul>
-          <ul className="flex justify-center w-screen space-x-12 bg-bottom p-4">
+          <ul className="flex justify-center w-screen space-x-12 bg-bottom py-4 max-w-full">
             <li className="max-w-fit">
               <a
                 className="flex px-4 py-2 items-center text-xs self-center hover:bg-neutral-900 text-slate-300 hover:text-white duration-300 rounded-md"
