@@ -1,5 +1,5 @@
 import useNavTab from '@store/navbar'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Games from './components/games'
 import Sports from './components/sports'
