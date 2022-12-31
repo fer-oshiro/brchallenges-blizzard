@@ -19,16 +19,18 @@ import connect from '@assets/battlenet/connect.svg'
 import buy from '@assets/battlenet/buy.svg'
 import mobile from '@assets/battlenet/mobile.svg'
 import Login from '@components/Modal/login'
-import { useState } from 'react'
 import useLoginModal from '@store/login'
 
-export default function Home() {
+import windows from '@assets/so/windows.png'
+import linux from '@assets/so/linux.png'
+import mac from '@assets/so/mac.svg'
+import BattleNetButton from '@components/BattleNet/button'
+
+function Home({ os }: { os: string }) {
   const { tab } = useNavTab((state) => state)
   const { bg, index } = useCarouselTab((state) => state)
   const { toggle } = useLoginModal((state) => state)
   const menuBg = tab ? 'bg-main backdrop-blur-sm' : ''
-
-
 
   return (
     <>
@@ -136,10 +138,7 @@ export default function Home() {
                 Compre jogos e itens digitais
               </li>
             </ul>
-            <button className='text-white bg-sky-500 hover:bg-sky-400 duration-300 flex py-3 px-10 rounded-md gap-4 md:text-base text-xs items-center font-semibold mt-12'>
-              <Image src={mobile} width={20} height={20} alt='' />
-              Baixe para o PC
-            </button>
+            <BattleNetButton />
             <div className='py-16 text-white flex gap-6 md:text-base text-xs'>
               <Image src={mobile} width={20} height={20} alt='' />
               <p>
@@ -164,3 +163,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home
