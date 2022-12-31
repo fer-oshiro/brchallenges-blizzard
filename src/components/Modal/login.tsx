@@ -81,9 +81,9 @@ export default function Login() {
                       </a>
                     </div>
                     <p className='text-white mb-4'>
-                      <a className='text-sky-500 underline cursor-pointer hover:text-sky-500 pr-2'>Crie uma conta</a> Battle.net de graça
+                      <a className='text-sky-500 underline cursor-pointer hover:text-sky-400 pr-2'>Crie uma conta</a> Battle.net de graça
                     </p>
-                    <a className='text-sky-500 underline cursor-pointer hover:text-sky-500'>Não consegue logar?</a>
+                    <a className='text-sky-500 underline cursor-pointer hover:text-sky-400'>Não consegue logar?</a>
                   </div>
                 </div>
               </Dialog.Panel>
