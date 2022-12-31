@@ -41,7 +41,6 @@ function Home() {
                     width="100"
                     height="200"
                     alt="Logo"
-                    priority
                   />
                 </Link>
                 <LgNav />
@@ -86,7 +85,7 @@ function Home() {
             <div className='pt-8 row-start-2 col-start-1 col-span-2 lg:col-span-1 lg:row-start-1 lg:row-span-2 self-center lg:pl-8'>
               <Carousel />
             </div>
-            <Image src={banner[index]?.logo || ''} className='duration-500 self-center justify-self-end col-start-2  row-start-1 lg:col-start-5 col-span-2 hidden md:block lg:pb-0' alt='' />
+            <Image src={banner[index]?.logo || ''} priority className='duration-500 self-center justify-self-end col-start-2  row-start-1 lg:col-start-5 col-span-2 hidden md:block lg:pb-0' alt='' />
             <div className='row-start-2 col-start-3 lg:col-start-5 lg:col-span-2 hidden md:block justify-self-end  w-60 lg:w-80 pt-24 lg:pt-6'>
               <p className='text-end pb-6'>ASSISTA O TRAILER</p>
               <div className='relative'>
