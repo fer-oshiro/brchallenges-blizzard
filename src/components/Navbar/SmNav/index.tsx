@@ -4,6 +4,7 @@ import React, { useLayoutEffect, useState, useEffect } from 'react'
 import Games from './components/games'
 import Sports from './components/sports'
 import { gamesMore } from '@constants/games_more'
+import { BiUser } from 'react-icons/bi'
 
 function useWindowSize() {
   const [size, setSize] = useState([0, 0]);
@@ -23,12 +24,12 @@ const SmNav = () => {
   const [width] = useWindowSize();
 
   useEffect(() => {
+    document.body.style.overflow = 'inherit'
     if (isOpen) {
       document.body.style.overflow = 'hidden'
       window.scrollTo(0, 0)
     }
     if (width > 1440) {
-      document.body.style.overflow = 'inherit'
       setIsOpen(false)
     }
   }, [isOpen, width])
@@ -89,6 +90,19 @@ const SmNav = () => {
           </nav>
           <nav className="mt-auto pt-4 pl-4 border-t-2 border-slate-500">
             <ul>
+              <li className="py-3 md:hidden block">
+                <a
+                  className="pb-2 border-b-2 max-w-fit border-transparent hover:border-sky-400 flex text-xs"
+                  href="#"
+                >
+                  <BiUser
+                    width={15}
+                    height={15}
+                    className="mr-4 fill-sky-300"
+                  />
+                  Login
+                </a>
+              </li>
               {gamesMore.map((game) => (
                 <li key={game.name} className="py-3">
                   <a
