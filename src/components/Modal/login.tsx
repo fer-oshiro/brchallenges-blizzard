@@ -71,13 +71,13 @@ export default function Login() {
                     <p className='text-white text-center'>ou conecte-se com</p>
                     <div className='flex justify-center pt-4 pb-8 gap-4'>
                       <a className='p-4 bg-white rounded-md cursor-pointer'>
-                        <Image src={google} width={20} height={20} alt='Login Google' className='' />
+                        <Image src={google} width={20} height={20} alt='Login Google' className='max-h-[20px] mt-[2px]' />
                       </a>
                       <a className='p-4 bg-white rounded-md cursor-pointer'>
-                        <Image src={apple} width={20} height={20} alt='Login Apple' />
+                        <Image src={apple} width={20} height={20} alt='Login Apple' className='max-h-[22px]' />
                       </a>
                       <a className='p-4 bg-white rounded-md cursor-pointer'>
-                        <Image src={facebook} width={20} height={20} alt='Login Facebook' />
+                        <Image src={facebook} width={20} height={20} alt='Login Facebook' className='max-h-[20px] mt-[2px]' />
                       </a>
                     </div>
                     <p className='text-white mb-4'>
