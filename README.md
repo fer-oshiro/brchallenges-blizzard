@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <img src=".github/logo.png" height="60px" />
+</h1>
 
-## Getting Started
+<p align="center">
+  <img src=".github/preview.png" width="100%" />
+</p>
 
-First, run the development server:
+## 💻 Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Esse projeto é uma landing page da empresa **Blizzard**, ela é composta por um menu de navegação, um banner hero com as informações dos principais jogos da empresa(Diablo, HearthStone e World of Warcraft), a listagem dos jogos exclusivos e um rodapé com informações do download do app battle.net.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para facilitar a codificação do projeto foi usado um protótipo do figma como base, o autor do layout é o design [**Gilberto Prado**](https://www.linkedin.com/in/gilberto-insanydesign/), [clique aqui](https://www.brchallenges.com/desafio/blizzard) para saber mais detalhes do desafio.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🚀 Tecnologias
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [Nextjs](https://nextjs.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [Zustand](https://github.com/pmndrs/zustand#readme)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📝 Requisitos do desafio
 
-## Learn More
+### Nível Fácil
 
-To learn more about Next.js, take a look at the following resources:
+- [x] Criar as seções: **Menu**, **Banner hero**, **Footer**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [x] O texto e o ícone do botão “Baixar jogo” devem ser alterados conforme o sistema operacional do usuário que estiver acessando a página. ( [material de apoio](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userAgent))
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [x] Aplicar efeito de _hover_ nas opções do menu de navegação.
 
-## Deploy on Vercel
+- [x] Aplicar responsividade para as seguintes resoluções: 1920px, 1440px, 768px e 375px.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Nível Médio
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+###
+
+- [x] Todos os requisitos do nivel fácil.
+
+- [x] Criar as seções: **Menu**, **Banner hero**, **Jogos Exclusivo**, **Footer**.
+
+- [x] Buscar a lista de jogos via api. ([acessar endpoint](https://api-brchallenges.vercel.app/api/blizzard/games))
+
+- [x] Aplicar efeito de hover nas imagens dos jogos da seção **Jogos Exclusivos**.
+
+- [x] Alterar as informações da seção **Banner Hero** ao selecionar uma opção no menu lateral. Os jogos disponíveis são **Diablo**, **HearthStone** e **World of Warcraft**.
+
+### Nível Difícil
+
+- [x] Todos os requisitos do nivel fácil e médio.
+
+- [x] Ao clicar no botão **Logar** do menu de navegação, deverá ser exibido o modal de login.
+
+- [x] Criar componente de _dropdown_ para as opções **Jogos** e **Esportes** do menu de navegação.
+
+- [x] Deverá ser executado um _gif_ do jogo quando ocorrer o evento de _hover_ na capa do trailer
