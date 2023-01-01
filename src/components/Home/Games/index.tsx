@@ -6,7 +6,7 @@ import List from './components/list'
 
 export default function Games(): React.ReactElement {
   return (
-    <section className="lg:container lg:mx-auto py-48 px-8">
+    <section className="lg:container lg:mx-auto pt-20 pb-48 px-8">
       <div className="flex justify-between">
         <p className="text-xl text-zinc-400 font-semibold hidden lg:block">
           GAMES
