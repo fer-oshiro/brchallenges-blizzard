@@ -27,6 +27,7 @@ function Home() {
   const { bg, index } = useCarouselTab((state) => state)
   const { toggle } = useLoginModal((state) => state)
   const menuBg = tab ? 'lg:bg-main lg:backdrop-blur-sm' : ''
+  const trailer = tab ? ' -z-10' : ''
 
   return (
     <>
@@ -86,7 +87,7 @@ function Home() {
               <Carousel />
             </div>
             <Image src={banner[index]?.logo || ''} priority className='duration-500 self-center justify-self-end col-start-2 row-start-1 lg:col-start-5 col-span-2 hidden md:block lg:pb-0 -translate-y-full lg:-translate-y-0 -z-10' alt='' />
-            <div className='row-start-2 col-start-3 lg:col-start-5 lg:col-span-2 hidden md:block justify-self-end  w-60 lg:w-80 min-h-[185px] lg:min-h-[250px] mt-auto -z-10'>
+            <div className={'row-start-2 col-start-3 lg:col-start-5 lg:col-span-2 hidden md:block justify-self-end  w-60 lg:w-80 min-h-[185px] lg:min-h-[250px] mt-auto' + trailer}>
               <p className='text-end pb-6'>ASSISTA O TRAILER</p>
               <div className='relative'>
                 <div className='absolute w-60 lg:w-80 aspect-video bg-cover'>
