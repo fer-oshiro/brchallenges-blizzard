@@ -1,8 +1,8 @@
-import useCarouselTab from "@store/carousel"
-import Image from "next/image"
-import { banner } from "@constants/banner"
+import useCarouselTab from '@store/carousel'
+import Image from 'next/image'
+import { banner } from '@constants/banner'
 
-export default function Carousel() {
+export default function Carousel(): React.ReactElement {
   const { toggle, game } = useCarouselTab((state) => state)
 
   return (
@@ -17,7 +17,11 @@ export default function Carousel() {
             width="70"
             height="70"
             alt="Logo"
-            className={bannerOption.name === game ? "" : 'opacity-70 grayscale relative -z-10'}
+            className={
+              bannerOption.name === game
+                ? ''
+                : 'opacity-70 grayscale relative -z-10'
+            }
           />
         </button>
       ))}

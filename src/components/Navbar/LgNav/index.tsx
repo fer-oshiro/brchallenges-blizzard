@@ -3,7 +3,7 @@ import React from 'react'
 import Games from './components/games'
 import Sports from './components/sports'
 
-const LgNav = () => {
+const LgNav = (): React.ReactElement => {
   return (
     <div
       className="hidden lg:flex lg:items-center lg:w-auto w-full ml-12 "

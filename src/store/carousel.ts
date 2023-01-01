@@ -27,12 +27,13 @@ const useCarouselGame = create<CarouselGame>((set) => ({
   next: () =>
     set((state) => {
       const index = state.index + 1
-      if (index > banner.length - 1)
+      if (index > banner.length - 1) {
         return {
           game: banner[0].name,
           bg: banner[0].img?.src,
           index: 0,
         }
+      }
       return {
         game: banner[index].name,
         bg: banner[index].img?.src,

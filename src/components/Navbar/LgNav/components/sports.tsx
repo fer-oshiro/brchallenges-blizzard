@@ -5,10 +5,10 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { sports } from '@constants/sport'
 import useNavTab from '@store/navbar'
 
-export default function Sports() {
+export default function Sports(): React.ReactElement {
   const { tab, toggle } = useNavTab((state) => state)
 
-  const handleToggle = (e: React.FormEvent) => {
+  const handleToggle = (e: React.FormEvent): void => {
     e.preventDefault()
     toggle('sport')
   }
@@ -34,12 +34,16 @@ export default function Sports() {
                   className="relative flex items-center text-xs self-center flex-col hover:bg-black text-slate-300	hover:text-white p-12 rounded-sm duration-300 h-full"
                   href="#"
                 >
-                  <div className='absolute w-full h-full hover:scale-125 duration-300 '>
-                    <Image src={sport.img} className='m-auto' width="150" height="150" alt="" />
+                  <div className="absolute w-full h-full hover:scale-125 duration-300 ">
+                    <Image
+                      src={sport.img}
+                      className="m-auto"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
                   </div>
-                  <span className='pt-36 text-center'>
-                    {sport.name}
-                  </span>
+                  <span className="pt-36 text-center">{sport.name}</span>
                 </a>
               </li>
             ))}

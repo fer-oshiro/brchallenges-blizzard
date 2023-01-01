@@ -6,22 +6,22 @@ import Sports from './components/sports'
 import { gamesMore } from '@constants/games_more'
 import { BiUser } from 'react-icons/bi'
 
-function useWindowSize() {
-  const [size, setSize] = useState([0, 0]);
+function useWindowSize(): number[] {
+  const [size, setSize] = useState([0, 0])
   useLayoutEffect(() => {
-    function updateSize() {
-      setSize([window.innerWidth, window.innerHeight]);
+    function updateSize(): void {
+      setSize([window.innerWidth, window.innerHeight])
     }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
-  return size;
+    window.addEventListener('resize', updateSize)
+    updateSize()
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
+  return size
 }
 
-const SmNav = () => {
+const SmNav = (): React.ReactElement => {
   const [isOpen, setIsOpen] = React.useState(false)
-  const [width] = useWindowSize();
+  const [width] = useWindowSize()
 
   useEffect(() => {
     document.body.style.overflow = 'inherit'
@@ -138,7 +138,10 @@ const SmNav = () => {
             </ul>
           </nav>
         </div>
-        <div className='absolute top-0 bottom-0 left-0 right-0 bg-opacity-30 bg-black' onClick={() => setIsOpen(false)} />
+        <div
+          className="absolute top-0 bottom-0 left-0 right-0 bg-opacity-30 bg-black"
+          onClick={() => setIsOpen(false)}
+        />
       </>
     )
   }
@@ -159,7 +162,6 @@ const SmNav = () => {
         </svg>
       </button>
     </div>
-
   )
 }
 

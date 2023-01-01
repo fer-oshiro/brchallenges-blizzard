@@ -3,7 +3,7 @@ import React from 'react'
 
 import { sports } from '@constants/sport'
 
-export default function Sports() {
+export default function Sports(): React.ReactElement {
   return (
     <details className="cursor-pointer">
       <summary className="max-w-fit	p-2 hover:bg-slate-800 rounded-md duration-300">

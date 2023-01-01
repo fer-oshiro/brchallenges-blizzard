@@ -1,4 +1,4 @@
-import Api from './api'
+import api from './api'
 
 export interface IGames {
   name: string
@@ -7,6 +7,6 @@ export interface IGames {
   logo: string
 }
 
-export default function GetGames() {
-  return Api.get<IGames[]>('/games')
+export default async function GetGames(): Promise<IGames[]> {
+  return await api('/games').get<IGames[]>()
 }

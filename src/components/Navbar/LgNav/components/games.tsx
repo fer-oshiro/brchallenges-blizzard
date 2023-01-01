@@ -6,21 +6,17 @@ import { games } from '@constants/games'
 import { gamesMore } from '@constants/games_more'
 import useNavTab from '@store/navbar'
 
-export default function Games() {
+export default function Games(): React.ReactElement {
   const { tab, toggle } = useNavTab((state) => state)
 
-  const handleToggle = (e: React.FormEvent) => {
+  const handleToggle = (e: React.FormEvent): void => {
     e.preventDefault()
     toggle('game')
   }
 
   return (
     <li>
-      <details
-        id="details-game"
-        onClick={handleToggle}
-        open={tab === 'game'}
-      >
+      <details id="details-game" onClick={handleToggle} open={tab === 'game'}>
         <summary className="max-w-min p-3 hover:bg-slate-800 rounded-md duration-300 cursor-pointer flex items-center">
           Jogos
           {tab === 'game' && <IoIosArrowUp className="ml-4 text-sky-600" />}
@@ -34,12 +30,16 @@ export default function Games() {
                   className="relative flex items-center text-xs self-center flex-col hover:bg-black text-slate-300	hover:text-white p-12 rounded-sm duration-300"
                   href="#"
                 >
-                  <div className='absolute w-full h-full hover:scale-125 duration-300 '>
-                    <Image src={game.img} className='m-auto' width="50" height="50" alt="" />
+                  <div className="absolute w-full h-full hover:scale-125 duration-300 ">
+                    <Image
+                      src={game.img}
+                      className="m-auto"
+                      width="50"
+                      height="50"
+                      alt=""
+                    />
                   </div>
-                  <span className='pt-14 text-center'>
-                    {game.name}
-                  </span>
+                  <span className="pt-14 text-center">{game.name}</span>
                 </a>
               </li>
             ))}
