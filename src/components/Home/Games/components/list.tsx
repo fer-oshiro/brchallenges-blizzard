@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import GetGames, { IGames } from '../../services/games'
+import GetGames, { IGames } from '@services/games'
 
 export default function List(): React.ReactElement {
   const [data, setData] = useState<IGames[] | null>(null)
